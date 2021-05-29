@@ -1,9 +1,10 @@
 import React from 'react';
+import SearchPage from './components/SearchPage';
 
 function App():JSX.Element{
   return (
   <> 
-    <h1>Teste</h1> 
+    <SearchPage />
   </> 
   );
 }
