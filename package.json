@@ -22,18 +22,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "commit": "cz"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
   },
   "browserslist": {
     "production": [
@@ -48,7 +44,6 @@
     ]
   },
   "devDependencies": {
-    "commitizen": "^4.2.4",
-    "husky": "^6.0.0"
+    "commitizen": "^4.2.4"
   }
 }
