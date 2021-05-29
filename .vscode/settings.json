@@ -7,5 +7,6 @@
       "strings": true
     },
     "editor.suggest.insertMode": "replace"
-  }
+  },
+  "discord.enabled": true
 }
