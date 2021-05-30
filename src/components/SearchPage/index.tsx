@@ -1,10 +1,12 @@
 import React from 'react';
-import { Main } from './style';
+import { Main, Img, InputText } from './style';
+import GitHub from '../../icons/GitHubDark.svg'
 
 export default function SearchPage():JSX.Element {
   return (
     <Main>
-      <h1>Teste</h1>
+      <Img src={ GitHub } alt="Logo" />
+      <InputText placeholder="Username"/>
     </Main>
   )
 }

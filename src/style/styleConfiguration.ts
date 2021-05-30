@@ -1,19 +1,25 @@
 export default  {
+  logo: {
+    header: {
+      width: '283px',
+      height: '276px'
+    }
+  },
   fontSize: {
-    input: '28px'
+    input: '24px'
   },
   input: {
     color: {
       onFocus: '#0069CA',
-      default: '9D9D9D'
+      default: '#9D9D9D'
     },
     size: {
       large: {
-        wdth: '448px'
+        wdth: '342px'
       }
     },
     fontSize: {
-      large: '28px'
+      large: '20px'
     }
   }
 }
