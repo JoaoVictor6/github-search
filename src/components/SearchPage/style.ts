@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import style from '../../style/styleConfiguration';
 
 export const Main = styled.div`
   display: flex;
@@ -11,26 +10,28 @@ export const Main = styled.div`
 `;
 
 export const Img = styled.img`
-  width: ${style.logo.header.width};
-  height: ${style.logo.header.height};
+  width: 283px;
+  height: 276px;
   margin-bottom: 85px;
 `;
 
 export const InputText = styled.input`
   border-style: none;
+  background: transparent;
 
-  width: ${style.input.size.large};
-  border: 1px solid ${style.input.color.default};
-  font-size: ${style.input.fontSize.large};
-  color: ${style.input.color.default};
+  width: 342px;
+  border: 1px solid #9d9d9d;
+  font-size: 20px;
+  color: #9d9d9d;
 
   border-radius: 50px;
   padding: 15px 30px;
   transition: color .5s;
   transition: border-color .1s;
+
   &:focus{
     outline: none;
-    border-color: ${style.input.color.onFocus};
-    color: ${style.input.color.onFocus};
+    border-color: #0069CA;
+    color: #0069CA;
   }
 `;

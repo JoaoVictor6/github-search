@@ -6,7 +6,8 @@ export default function SearchPage():JSX.Element {
   return (
     <Main>
       <Img src={ GitHub } alt="Logo" />
-      <InputText placeholder="Username"/>
+      <InputText 
+        placeholder="Username"/>
     </Main>
   )
 }
