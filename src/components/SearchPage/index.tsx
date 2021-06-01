@@ -33,7 +33,7 @@ export default function SearchPage():JSX.Element {
         />
         <Button
           active={activeButton}
-          onChange={ e => e.preventDefault()}
+          onClick={ e => e.preventDefault()}
         >
           <FontAwesomeIcon icon={faSearch}/>
         </Button>

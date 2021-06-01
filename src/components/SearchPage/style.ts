@@ -30,10 +30,6 @@ export const InputText = styled.input`
   border-radius: 50px 0 0 50px;
   padding: 15px 0px 15px 30px;
   outline: none;
-
-  &:hover {
-    color: #0069CA;
-  }
 `;
 
 export const Form = styled.form`
@@ -50,6 +46,14 @@ export const Form = styled.form`
   font-size: 20px;
   color: #9d9d9d;
 
+  &:hover{
+    border-color: #0069CA;
+
+    && > button > svg {
+      color: ${(props:ActivityProps) => props.active ? '#ffffff' : '#0069CA'};
+    }
+  }
+
   
 `;
 
@@ -63,9 +67,10 @@ export const Button = styled.button`
   height: 50px;
   background-color: ${(props:ActivityProps) => props.active ? '#2E9BFF' : 'transparent'};
   transition: background-color .1s;
-  color: ${(props:ActivityProps) => props.active ? '#ffffff' : '#0069CA'};
+  color: ${(props:ActivityProps) => props.active ? '#ffffff' : '#9d9d9d'};
 
   &:hover{
     cursor: pointer;
+    color: #0069CA;
   }
 `;

@@ -8,7 +8,12 @@ export default interface PropsTheme {
 
 export const lightTheme = {
   background: '#ffffff',
-  logo: logoLight
+  logo: logoLight,
+  button: {
+    colorOnHover: '#0069CA',
+    colorOnFocus: '#ffffff',
+    background: '#2E9BFF'
+  }
 }
 
 export const darkTheme = {
