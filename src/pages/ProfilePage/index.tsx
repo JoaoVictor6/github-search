@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-// import useSearchContext from '../../context/SearchContext';
-
+import { useParams } from 'react-router';
 import { Container } from './styles';
 
+interface userProps {
+  user: string
+}
+
 const ProfilePage: React.FC = () => {
-  // const { searchValue } = useSearchContext();
   const [ apiResponse, setApiResponse ] = useState([])
+  const { user } = useParams<userProps>()
 
   useEffect( () => {
     const api = async () => {
@@ -18,10 +21,12 @@ const ProfilePage: React.FC = () => {
     api();
   }, [])
 
+  console.log(user)
+
   console.log(apiResponse)
   return (
     <Container>
-      Page
+      {user}
     </Container>
   );
 }
