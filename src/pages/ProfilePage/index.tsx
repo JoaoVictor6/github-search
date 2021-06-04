@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { Redirect, useParams } from 'react-router';
+import Sidebar, { UserInformation } from '../../components/Sidebar';
 import { Container } from './styles';
 
 interface userProps {
@@ -7,26 +8,25 @@ interface userProps {
 }
 
 const ProfilePage: React.FC = () => {
-  const [ apiResponse, setApiResponse ] = useState([])
+  // const [ apiResponse, setApiResponse ] = useState([])
+  const [ userInfo, setUserInfo ] = useState<UserInformation>({} as UserInformation)
   const { user } = useParams<userProps>()
 
   useEffect( () => {
     const api = async () => {
-      // const response = await fetch(`https://api.github.com/users/${searchValue}/repos`)
-      // const data = await response.json()
+      const response = await fetch(`https://api.github.com/users/${user}`)
+      const data = await response.json()
 
-      setApiResponse([])
+      setUserInfo(data)
     }
 
     api();
   }, [])
 
-  console.log(user)
-
-  console.log(apiResponse)
   return (
     <Container>
-      {user}
+      {!!userInfo.message ? <Redirect to='/error'/> : ''}
+      <Sidebar user={userInfo}/>
     </Container>
   );
 }
