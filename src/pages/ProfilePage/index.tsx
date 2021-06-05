@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, useParams } from 'react-router';
+import SearchField from '../../components/SearchField';
 import Sidebar, { UserInformation } from '../../components/Sidebar';
 import { Container } from './styles';
 
@@ -29,6 +30,7 @@ const ProfilePage: React.FC = () => {
     <Container>
       {!!userInfo.message ? <Redirect to='/error'/> : ''}
       <Sidebar user={userInfo}/>
+      <SearchField />
     </Container>
   );
 }
