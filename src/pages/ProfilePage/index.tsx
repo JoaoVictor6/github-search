@@ -19,9 +19,11 @@ const ProfilePage: React.FC = () => {
 
       setUserInfo(data)
     }
-
+    
     api();
   }, [])
+  
+  document.title = `${userInfo.name} user page`
 
   return (
     <Container>

@@ -5,6 +5,8 @@ import { Body, Container, TextContainer} from './styles';
 import Textsvg from './svg/Textsvg';
 
 const Error404Page: React.FC = () => {
+  document.title = 'User not found'
+  
   return (
     <>
     <Body />
