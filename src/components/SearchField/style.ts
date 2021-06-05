@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: auto;
-  margin-top: 6px;
+  margin-top: 20px;
   width: 300px;
   background: #C4C4C4;
   display: flex;
   border-radius: 5px;
   box-shadow: 0px 0px 0px -1px #545454;
+
 `;
 
 export const TextField = styled.input`
