@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, useParams } from 'react-router';
+import Repositories from '../../components/Repositories';
 import SearchField from '../../components/SearchField';
 import Sidebar, { UserInformation } from '../../components/Sidebar';
-import { Container } from './styles';
+import { Container, RepoDiv } from './styles';
 
 interface userProps {
   user: string
 }
 
 const ProfilePage: React.FC = () => {
-  // const [ apiResponse, setApiResponse ] = useState([])
+  const [ userRepositories, setUserRepositories ] = useState([])
   const [ userInfo, setUserInfo ] = useState<UserInformation>({} as UserInformation)
   const { user } = useParams<userProps>()
 
   useEffect( () => {
     const api = async () => {
-      const response = await fetch(`https://api.github.com/users/${user}`)
-      const data = await response.json()
+      const userProfileResponse = await fetch(`https://api.github.com/users/${user}`)
+      const profileData = await userProfileResponse.json()
 
-      setUserInfo(data)
+      const userRepositoriesResponse = await fetch(`https://api.github.com/users/${user}/repos`)
+      const userRepositoriesData = await userRepositoriesResponse.json()
+
+      setUserRepositories(userRepositoriesData)
+
+      setUserInfo(profileData)
     }
     
     api();
@@ -30,7 +36,10 @@ const ProfilePage: React.FC = () => {
     <Container>
       {!!userInfo.message ? <Redirect to='/error'/> : ''}
       <Sidebar user={userInfo}/>
-      <SearchField />
+      <RepoDiv>
+        <SearchField />
+        <Repositories repositories={userRepositories}/>
+      </RepoDiv>
     </Container>
   );
 }
