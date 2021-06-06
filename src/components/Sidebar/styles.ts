@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   box-shadow: 1px 0px 1px -1px rgba(0,0,0,0.55);
   background: #ffffff;
   display: flex;
