@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -71,4 +71,35 @@ export const Footer = styled.div`
 export const FooterText = styled.div`
   font-size: 13px;
   color: #3F3F3F;
+`;
+
+const UpAndDown = keyframes`
+  ${"0%"} {
+    transform : translateX(500px);
+  }   
+  ${"50%"}{
+    transform : translateX(100px);
+  }
+  ${"100%"}{
+    transform : translateX(500px);
+  }
+}`;
+
+interface ClipboardInterface {
+  active: boolean,
+}
+
+export const ClipboardNotification = styled.div`
+  display: ${(props: ClipboardInterface) => props.active ? "inline" : "none"};
+  margin: 0 36px 0 auto;
+  border-radius: 3px;
+  padding: 6px 12px;
+  background: #383838;
+  font-size: 16px;
+  color: #fff;
+  position: fixed;
+  left: 80%;
+  bottom: 30px;
+
+  animation: ${UpAndDown} 3s cubic-bezier(1,0,0,1) ;
 `;
