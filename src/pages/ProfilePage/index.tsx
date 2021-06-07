@@ -11,6 +11,7 @@ interface userProps {
 
 const ProfilePage: React.FC = () => {
   const [ userRepositories, setUserRepositories ] = useState([])
+  const [ hasError, setHasError ] = useState(false)
   const [ userInfo, setUserInfo ] = useState<UserInformation>({} as UserInformation)
   const { user } = useParams<userProps>()
 
@@ -21,6 +22,9 @@ const ProfilePage: React.FC = () => {
 
       const userRepositoriesResponse = await fetch(`https://api.github.com/users/${user}/repos`)
       const userRepositoriesData = await userRepositoriesResponse.json()
+      if(!!userRepositoriesData.message){
+        setHasError(true)
+      }
 
       setUserRepositories(userRepositoriesData)
 
@@ -34,7 +38,7 @@ const ProfilePage: React.FC = () => {
 
   return (
     <Container>
-      {!!userInfo.message ? <Redirect to='/error'/> : ''}
+      { hasError ? <Redirect to='/error'/> : ''}
       <Sidebar user={userInfo}/>
       <RepoDiv>
         <SearchField />
