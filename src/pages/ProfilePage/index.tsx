@@ -22,7 +22,7 @@ const ProfilePage: React.FC = () => {
 
       const userRepositoriesResponse = await fetch(`https://api.github.com/users/${user}/repos`)
       const userRepositoriesData = await userRepositoriesResponse.json()
-      if(!!userRepositoriesData.message){
+      if(!!userRepositoriesData.message){ 
         setHasError(true)
       }
 
