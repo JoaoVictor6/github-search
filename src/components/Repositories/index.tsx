@@ -1,10 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import copy from 'copy-to-clipboard'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClone } from '@fortawesome/free-solid-svg-icons'
 
-import { ClipboardNotification, Container, Description, Footer, FooterText, Header, Link, Repository, Title } from './styles'
+import { 
+  PopUp,
+  Container,
+  Description,
+  Footer,
+  FooterText,
+  Header,
+  Link,
+  Repository,
+  Title, 
+  Icon} from './styles'
 
 interface Repositories{
   name: string;
@@ -17,7 +27,6 @@ interface Repositories{
 }
 
 export default function Repositories({repositories}: {repositories: Array<Repositories>}):JSX.Element {
-  const [ hasActive, setHasActive ] = useState(false)
 
   const dataFilter = (dataString:string) => {
     const data = new Date(dataString)
@@ -26,7 +35,6 @@ export default function Repositories({repositories}: {repositories: Array<Reposi
 
   const clickHandler = ({ git_url }: { git_url: string }) => {
     copy(git_url)
-    setHasActive(true)
   }
 
   return (
@@ -40,7 +48,10 @@ export default function Repositories({repositories}: {repositories: Array<Reposi
                 <Title>
                   <Link href={repo.html_url} target='_blank' rel="noreferrer">{repo.name}</Link>
                 </Title>
-                <FontAwesomeIcon icon={faClone} onClick={ () => clickHandler(repo)}/> 
+                <Icon>
+                  <PopUp>Copy</PopUp>
+                  <FontAwesomeIcon icon={faClone} onClick={ () => clickHandler(repo)} /> 
+                </Icon>
               </Header>
               <Description>
                 {repo.description}
@@ -51,14 +62,7 @@ export default function Repositories({repositories}: {repositories: Array<Reposi
                 <FooterText>Updated at: {dataFilter(repo.updated_at)}</FooterText>
               </Footer>
             </Repository>
-            { hasActive && 
-              <ClipboardNotification  
-              active={hasActive}
-              onAnimationEnd={ () => setHasActive(false)}
-              >
-                {`Link copied!`}
-              </ClipboardNotification>
-            }
+            
             </>
           )
         })
