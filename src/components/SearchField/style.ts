@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Form = styled.form`
   margin: auto;
   margin-top: 20px;
   width: 300px;
@@ -26,7 +26,9 @@ interface PropsActivate{
   active: boolean
 }
 
-export const Div = styled.div`
+export const Button = styled.button`
+  border-style: none;
+
   margin: auto;
   text-align: center;
   background-color: transparent;
