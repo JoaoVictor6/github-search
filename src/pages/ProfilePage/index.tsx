@@ -32,7 +32,7 @@ const ProfilePage: React.FC = () => {
     }
     
     api();
-  }, [])
+  }, [user])
   
   document.title = `${userInfo.name} user page`
 

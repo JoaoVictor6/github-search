@@ -6,7 +6,7 @@ import useSearchContext from '../../context/SearchContext'
 import { Form, TextField, Button } from './style'
 
 export default function SearchField():JSX.Element {
-  const [ textField, setTextField] = useState<string>()
+  const [ textField, setTextField] = useState("")
   const [ redirect, setRedirect ] = useState<boolean>(false)
 
   const { searchValue, setSearchValue } = useSearchContext()

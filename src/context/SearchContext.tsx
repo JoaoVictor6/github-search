@@ -1,16 +1,15 @@
 import React, { createContext, useContext, useState } from 'react'
 
 interface ContextProps{
-  searchValue: string | undefined;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setSearchValue: Function;
+  searchValue: string;
+  setSearchValue: (arg: string) => void;
 }
 
 const Context = createContext<ContextProps>({} as ContextProps)
 
 
 export const SearchContext: React.FC = (props) => {
-  const [ searchValue, setSearchValue] = useState<string>()
+  const [ searchValue, setSearchValue] = useState<string>("")
   return(
     <Context.Provider 
       value={{
