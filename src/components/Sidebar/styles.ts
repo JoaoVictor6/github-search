@@ -4,7 +4,7 @@ export const Container = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  box-shadow: 1px 0px 1px -1px rgba(0,0,0,0.55);
+  box-shadow: 1px 0px 1px -1px rgba(0, 0, 0, 0.55);
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -18,13 +18,13 @@ export const Header = styled.div`
   margin: 20px 16px;
   width: calc(100% - 32px);
   font-size: 18px;
-`
+`;
 
 export const Img = styled.img`
   height: 200px;
   width: 200px;
   border-radius: 10px;
-`
+`;
 
 export const UserNumbers = styled.div`
   width: calc(100%);
@@ -32,31 +32,31 @@ export const UserNumbers = styled.div`
 `;
 
 export const InfoTitles = styled.h1`
-  &&:first-child{
-    font-family: 'Nunito', sans-serif;
+  &&:first-child {
+    font-family: "Nunito", sans-serif;
     font-weight: 700;
     font-size: 26px;
     margin-top: 0;
   }
   margin: 0px;
   margin-top: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 600;
-`
+`;
 
 export const Content = styled.div`
- margin: 0 16px;
- width: calc(100% - 32px);
-`
+  margin: 0 16px;
+  width: calc(100% - 32px);
+`;
 
 export const Bio = styled.p`
   text-align: center;
   font-style: italic;
-  color: #4A4A4A;
+  color: #4a4a4a;
   font-size: 20px;
   margin: 0;
-`
+`;
 
 export const Name = styled.h1`
   color: #303030;
@@ -65,7 +65,7 @@ export const Name = styled.h1`
   margin-top: 0px;
   text-align: center;
   margin: 10px;
-`
+`;
 
 export const FooterInformation = styled.div`
   margin-top: 7em;
@@ -78,20 +78,20 @@ export const Icons = styled.div`
   justify-content: space-between;
   margin: 10px auto;
   width: 30%;
-  && > a{
+  && > a {
     text-decoration: none;
     color: #383838;
   }
 
-  && > a:hover{
+  && > a:hover {
     color: #000;
   }
 
   && > a:nth-child(2):hover {
-    color: #2E9BFF;
+    color: #2e9bff;
   }
 
-  && > a > svg{
+  && > a > svg {
     font-size: 36px;
   }
-` 
+`;

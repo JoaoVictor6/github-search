@@ -21,27 +21,25 @@ export const Header = styled.div`
 `;
 
 export const Title = styled.h1`
- color: #383838;
- font-weight: 500;
- font-size: 18px;
- margin-top: 5px;
- margin-bottom: 4px;
+  color: #383838;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 4px;
 
- && > a:hover {
-   color: #1A1C1E;
- }
+  && > a:hover {
+    color: #1a1c1e;
+  }
 `;
 
 export const Link = styled.a`
-  &&{
-    text-decoration: none;
-    color: #383838;
-  }
-  &&:hover{
+  text-decoration: none;
+  color: #383838;
+  &&:hover {
     text-decoration: none;
   }
 
-  &&:visited{
+  &&:visited {
     color: #383838;
   }
 `;
@@ -49,7 +47,7 @@ export const Link = styled.a`
 export const Description = styled.div`
   font-style: italic;
   font-size: 15px;
-  color: #3F3F3F;
+  color: #3f3f3f;
   margin-left: 10px;
 `;
 
@@ -61,40 +59,40 @@ export const Footer = styled.div`
 
 export const FooterText = styled.div`
   font-size: 13px;
-  color: #3F3F3F;
+  color: #3f3f3f;
 `;
 export const Icon = styled.div`
   margin: 0;
-  &&:hover div{
-      visibility: visible;
+  &&:hover div {
+    visibility: visible;
   }
 
-  &&:active div{
-      visibility: hidden;
+  &&:active div {
+    visibility: hidden;
   }
 
-  && > svg{
+  && > svg {
     color: #383838;
     font-size: 18px;
   }
 
-  && > svg:hover{
-    color: #1A1C1E;
+  && > svg:hover {
+    color: #1a1c1e;
     cursor: pointer;
   }
-  
-  && > svg:active{
-    transform: scale(.9);
+
+  && > svg:active {
+    transform: scale(0.9);
   }
 `;
 
 export const PopUp = styled.div`
   visibility: hidden;
-  background-color: rgba(53, 61, 64, .7);
+  background-color: rgba(53, 61, 64, 0.7);
   color: #fff;
   text-align: center;
-  font-size: .9rem;
-  padding: .7rem 1.3rem;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 10px;
 
   position: absolute;

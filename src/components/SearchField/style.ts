@@ -4,11 +4,10 @@ export const Form = styled.form`
   margin: auto;
   margin-top: 20px;
   width: 300px;
-  background: #C4C4C4;
+  background: #c4c4c4;
   display: flex;
   border-radius: 5px;
   box-shadow: 0px 0px 0px -1px #545454;
-
 `;
 
 export const TextField = styled.input`
@@ -22,8 +21,8 @@ export const TextField = styled.input`
   font-family: Nunito, sans-serif;
   color: #515151;
 `;
-interface PropsActivate{
-  active: boolean
+interface PropsActivate {
+  active: boolean;
 }
 
 export const Button = styled.button`
@@ -34,12 +33,12 @@ export const Button = styled.button`
   background-color: transparent;
   width: 60px;
   transition: color 1s;
-  && > svg{
+  && > svg {
     background-color: transparent;
-    color: ${ (props:PropsActivate)=> props.active ? '#8E8686' : '#515151' };
+    color: ${(props: PropsActivate) => (props.active ? "#8E8686" : "#515151")};
   }
 
-  && > svg:hover{
+  && > svg:hover {
     cursor: pointer;
     color: #515151;
   }

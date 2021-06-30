@@ -1,10 +1,10 @@
-import React from 'react'
-import copy from 'copy-to-clipboard'
+import React from "react";
+import copy from "copy-to-clipboard";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClone } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClone } from "@fortawesome/free-solid-svg-icons";
 
-import { 
+import {
   PopUp,
   Container,
   Description,
@@ -13,10 +13,11 @@ import {
   Header,
   Link,
   Repository,
-  Title, 
-  Icon} from './styles'
+  Title,
+  Icon,
+} from "./styles";
 
-interface Repositories{
+interface Repositories {
   name: string;
   description: string;
   created_at: string;
@@ -26,47 +27,54 @@ interface Repositories{
   html_url: string;
 }
 
-export default function Repositories({repositories}: {repositories: Array<Repositories>}):JSX.Element {
-
-  const dataFilter = (dataString:string) => {
-    const data = new Date(dataString)
-    return `${data.getMonth()}/${data.getDate()}/${data.getFullYear()}`
-  }
+export default function Repositories({
+  repositories,
+}: {
+  repositories: Array<Repositories>;
+}): JSX.Element {
+  const dataFilter = (dataString: string) => {
+    const data = new Date(dataString);
+    return `${data.getMonth()}/${data.getDate()}/${data.getFullYear()}`;
+  };
 
   const clickHandler = ({ git_url }: { git_url: string }) => {
-    copy(git_url)
-  }
+    copy(git_url);
+  };
 
   return (
     <Container>
-      {
-        repositories.map((repo, index) => {
-          return(
-            <>
+      {repositories.map((repo, index) => {
+        return (
+          <>
             <Repository key={index}>
               <Header>
                 <Title>
-                  <Link href={repo.html_url} target='_blank' rel="noreferrer">{repo.name}</Link>
+                  <Link href={repo.html_url} target="_blank" rel="noreferrer">
+                    {repo.name}
+                  </Link>
                 </Title>
                 <Icon>
                   <PopUp>Copy</PopUp>
-                  <FontAwesomeIcon icon={faClone} onClick={ () => clickHandler(repo)} /> 
+                  <FontAwesomeIcon
+                    icon={faClone}
+                    onClick={() => clickHandler(repo)}
+                  />
                 </Icon>
               </Header>
-              <Description>
-                {repo.description}
-              </Description>
+              <Description>{repo.description}</Description>
               <Footer>
-                <FooterText>Created at: {dataFilter(repo.created_at)}</FooterText>
-                <FooterText>Language: {repo.language || 'none'}</FooterText>
-                <FooterText>Updated at: {dataFilter(repo.updated_at)}</FooterText>
+                <FooterText>
+                  Created at: {dataFilter(repo.created_at)}
+                </FooterText>
+                <FooterText>Language: {repo.language || "none"}</FooterText>
+                <FooterText>
+                  Updated at: {dataFilter(repo.updated_at)}
+                </FooterText>
               </Footer>
             </Repository>
-            
-            </>
-          )
-        })
-      }
+          </>
+        );
+      })}
     </Container>
-  )
+  );
 }
